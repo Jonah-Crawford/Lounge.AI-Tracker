@@ -2,9 +2,7 @@
 
 [Lounge.AI Spreadsheet](https://docs.google.com/spreadsheets/d/1MSeZwXZ9ErnIUDD6uegJ9OaCSQPABbqsjvbB9eK1JBw/edit?usp=sharing)
 
-# Lounge.AI Tracker
-
-An automated GitHub repository tracker for the **lounge.ai WhatsApp community**, built with Node.js.
+An automated GitHub repository tracker for the **Lounge.AI WhatsApp community**, built with Node.js.
 
 Lounge Tracker monitors a designated WhatsApp group for GitHub repository links, retrieves project information using the GitHub API, and automatically maintains a public Google Sheets directory.
 
@@ -77,10 +75,6 @@ New repositories are automatically added to the directory without manual interve
 
 ## Notes
 
-This project uses [whatsapp-web.js](https://wwebjs.dev/), an unofficial WhatsApp Web integration. It is not affiliated with WhatsApp, Meta, GitHub or lounge.ai.
+This project uses [whatsapp-web.js](https://wwebjs.dev/), an unofficial WhatsApp Web integration. It is not affiliated with WhatsApp, Meta, GitHub or Lounge.AI.
 
 Use only in groups where automated collection has been authorised. The public directory should contain only information approved for publication.
-
-## Licence
-
-No licence specified. All rights reserved unless a licence is added.
