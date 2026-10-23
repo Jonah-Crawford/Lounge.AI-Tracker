@@ -1,3 +1,4 @@
+const { syncSheet } = require('./sheets');
 
 const { Client, LocalAuth } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
@@ -115,10 +116,27 @@ async function processMessage(msg) {
 
       save();
       console.log(`Added: ${repo.full_name}`);
+
+      queueSheetSync();
     } catch (error) {
       console.error(`Failed to process ${name}:`, error.message);
     }
   }
+}
+
+let syncQueue = Promise.resolve();
+
+function queueSheetSync() {
+  syncQueue = syncQueue
+    .catch(error => {
+      console.error('Previous Sheets sync failed:', error.message);
+    })
+    .then(() => syncSheet())
+    .catch(error => {
+      console.error('Sheets sync failed:', error.message);
+    });
+
+  return syncQueue;
 }
 
 client.on('qr', qr => {
